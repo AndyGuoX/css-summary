@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    /* 灵活的背景定位 */
+    .box {
+      background-position: right 20px bottom 10px; /* 使背景图片具有偏移量 */
+    }
+
+    /* background-origin方案 */
+    .box2 {
+      padding: 10px;
+      background-origin: content-box; /* 让background-position的定位依据content区域 */
+      background-position: right bottom;
+    }
+
+    /* calc() 方案 */
+    .box3 {
+      background-position: calc(100% - 20px) calc(100% - 10px);
+      /* calc() 允许执行运算 */
+    }
+  </style>
+</head>
+<body>
+
+</body>
+</html>

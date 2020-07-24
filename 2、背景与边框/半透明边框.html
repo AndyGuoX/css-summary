@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    /* 半透明边框 */
+    body {
+      background-color: #446d88;
+    }
+
+    .box {
+      border: 10px solid hsla(0, 0%, 100%, .5);
+      background: white;
+      background-clip: padding-box; /* 默认属性值为border-box 即从边框外切割box的背景 */
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+  Can I haz semitransparent borders? Pretty please?
+</div>
+</body>
+</html>

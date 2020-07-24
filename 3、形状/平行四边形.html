@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body {
+      padding-left: 100px;
+    }
+
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: #fb3;
+      margin-top: 10px;
+    }
+
+    .box1 {
+      transform: skewX(-45deg); /* 单独的拉伸会使其中的内容也发生拉伸 */
+    }
+
+    /* 解决方案一： 利用嵌套将文本再拉伸回来/ */
+    .box2 {
+      transform: skewX(-45deg);
+    }
+
+    .box2 > .son {
+      transform: skewX(45deg);
+    }
+
+    /* 解决方案二： 伪元素解决方案 */
+    .button {
+      position: relative;
+      width: 100px;
+      height: 100px;
+    }
+
+    .button::before {
+      content: ''; /* 用伪元素生成一个矩形 */
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      background: #fb3;
+      transform: skew(45deg);
+    }
+  </style>
+</head>
+<body>
+<div class="box1">123</div>
+<div class="box2">
+  <p class="son">123</p>
+</div>
+<p class="button">123</p>
+</body>
+</html>

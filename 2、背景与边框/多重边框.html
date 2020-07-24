@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    /* 多重边框 */
+    .box {
+      width: 100px;
+      height: 100px;
+      margin: 30px 0 0 30px;
+      background: yellowgreen;
+      box-shadow: 0 0 0 10px #655,
+      0 0 0 15px deeppink,
+      0 2px 5px 15px rgba(0, 0, 0, .6);
+    }
+
+    /* 用逗号分割多个边框，第一个值在最顶层，但是box-shadow是层层叠加的，所以扩张半径是需要叠加的 */
+    /* 投影并不会影响布局，所以需要额外模拟出边框所需要占据的空间 */
+    /* outline解决方案 */
+    .box2 {
+      width: 100px;
+      height: 100px;
+      margin: 300px 0 0 30px;
+      background: yellowgreen;
+      border: 10px solid #655;
+      outline: 5px solid deeppink;
+    }
+
+    /* outline-offset可以控制它与边缘之间的间距 */
+  </style>
+</head>
+<body>
+<div class="box"></div>
+<div class="box2"></div>
+</body>
+</html>

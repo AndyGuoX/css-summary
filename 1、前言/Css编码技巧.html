@@ -1,0 +1,46 @@
+<!-- css编码技巧 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    /* 1、尽量减少代码重复 */
+    /* 2、代码易维护和代码量少不可兼得 */
+    /* 3、如下按钮如果需要改变大小的话只需要改变父元素的字体大小值，绝对值对于修改很不友好 */
+    /* 4、继承的好处，不需要重复制定属性值，只需利用inherit的特性即可，如要设置超链接颜色设定为与页面中其他文本相同。 */
+    body {
+      font-size: 16px;
+      color: #333;
+    }
+
+    .box {
+      padding: .3em .8em;
+      border: 1px solid #446d88;
+      background: #58a linear-gradient(hsla(0, 0%, 100%, .2), transparent);
+      border-radius: .2em;
+      box-shadow: 0 .05em .25em rgba(0, 0, 0, .5);
+      color: #fff;
+      text-shadow: 0 -.05em .05em rgba(0, 0, 0, .5);
+    }
+
+    button.cancel {
+      background-color: #c00;
+    }
+
+    button.ok {
+      background-color: #6b0;
+    }
+
+    a {
+      color: inherit;
+    }
+  </style>
+</head>
+<body>
+<button class="box cancel">Cancel</button>
+<button class="box ok">Ok</button>
+<a href="#">click me</a>
+</body>
+</html>

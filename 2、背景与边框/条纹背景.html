@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      width: 100px;
+      height: 120px;
+      margin-top: 10px;
+    }
+
+    /* 条纹背景 linear-gradient*/
+    .box1 {
+      background: linear-gradient(#fb3, #58a); /* 默认从上到下均匀渐变 */
+    }
+
+    .box2 {
+      background: linear-gradient(#fb3 20%, #58a 80%);
+      /* 0-20%为#fb3单色，20%-80%为渐变色 80%-100%为#58a单色 */
+    }
+
+    .box3 {
+      background: linear-gradient(#fb3 50%, #58a 50%);
+      background-size: 100% 30px;
+      /* 条纹默认是重复平铺的 no-repeat和取消平铺 */
+    }
+
+    .box4 {
+      background: linear-gradient(#fb3 30%, #58a 0);
+      background-size: 100% 30px;
+      /* 如果某个色标的位置值比整个列表中它之前的色标的位置值都要小，则该色标的位置值会被设置为它前面所有色标位置值的最大值 */
+      /* 所以上面的0相当与30% */
+    }
+
+    .box5 {
+      background: linear-gradient(#fb3 33.3%, #58a 0, #58a 66.6%, yellowgreen 0);
+      background-size: 100% 30px;
+    }
+  </style>
+</head>
+<body>
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+<div class="box4"></div>
+<div class="box5"></div>
+</body>
+</html>
